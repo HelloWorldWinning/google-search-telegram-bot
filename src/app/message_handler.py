@@ -9,7 +9,7 @@ from app.log import Log
 from app.config_loader import ConfigLoader
 
 
-from app.config_loader import ConfigLoader
+#from app.config_loader import ConfigLoader
 
 number_of_result = ConfigLoader.load("number_of_result")
 

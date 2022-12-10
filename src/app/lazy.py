@@ -1,4 +1,5 @@
 # See: http://stackoverflow.com/questions/3012421/python-lazy-property-decorator
+# turn  method  to  attr
 class Lazy(object):
 	def __init__(self, lazy_init):
 		self._lazy_init = lazy_init

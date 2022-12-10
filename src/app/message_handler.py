@@ -8,6 +8,14 @@ from app.lazy import Lazy
 from app.log import Log
 from app.config_loader import ConfigLoader
 
+
+from app.config_loader import ConfigLoader
+
+number_of_result = ConfigLoader.load("number_of_result")
+
+
+
+
 ## Throw when used in channel
 class _ChanelException(Exception):
 	pass
@@ -297,7 +305,7 @@ class MessageHandler():
 	def _build_text_response(self, response):
 		msg = ""
 		for i, it in enumerate(response["items"]):
-			if i > 2:
+			if i >=  number_of_result:
 				break
 			msg += "%s\n\n" % _format_msg(it)
 		return self._TextResponse(msg.strip() if msg else \
@@ -306,7 +314,7 @@ class MessageHandler():
 	def _build_image_response(self, response):
 		responses = []
 		for i, it in enumerate(response["items"]):
-			if i > 2:
+			if i >=  number_of_result:
 				break
 			responses += [self._ImageResponse(it["link"], caption = it["title"])]
 		return responses if responses else \

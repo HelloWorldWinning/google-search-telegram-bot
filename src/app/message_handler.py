@@ -198,7 +198,7 @@ class InlineMessageNoThreadHandler(_InlineMessageBaseHandler):
 ## Bot logic when it's called in a private chat
 class MessageHandler():
 	RESPONSE_NON_TEXTUAL_INPUT = "Sorry I can only read text \U0001F62E"
-	RESPONSE_EXCEPTION = " class MessageHandler()"
+	RESPONSE_EXCEPTION = "message_handler.py:201 class MessageHandler()"
 	#RESPONSE_EXCEPTION = "Ehmm... I feel like I'm sick \U0001F635 Mind contacting my parents about this (with a screenshot of our conversation if you don't mind) at https://github.com/HelloWorldWinning/google-search-telegram-bot ?"
 	RESPONSE_NO_RESULTS = "No results found! \u2639"
 	RESPONSE_HI_TEMPLATE = "Hi there \U0001F44B\U0001F600 You can initiate a search by typing your query here, or using the inline syntax @%s [SEARCH_QUERY...] in your other chats. You can also start an image search by beginning your search query with \"image\"\n\nThis bot is open source! Visit us at https://github.com/HelloWorldWinning/google-search-telegram-bot"
@@ -224,8 +224,10 @@ class MessageHandler():
 					self.RESPONSE_MD_DISALLOWED_USER, parse_mode = "Markdown")
 		except Exception as e:
 			Log.e("Failed while _do_handle", e)
-			self._bot.sendMessage(self._glance["chat_id"],
-					self.RESPONSE_EXCEPTION)
+			self._do_handle()
+
+	#		self._bot.sendMessage(self._glance["chat_id"],
+	#				self.RESPONSE_EXCEPTION)
 
 	class _TextResponse():
 		def __init__(self, content, type = "Markdown"):

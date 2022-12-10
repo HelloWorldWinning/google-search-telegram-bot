@@ -22,7 +22,7 @@ class CustomSearchApi():
 		args.update({
 			"key": self.API_KEY,
 			"cx": self.SEARCH_ENGINE_ID,
-			"safe": "medium",
+			"safe": "OFF",
 			"q": q,
 		})
 		with http_request("GET", self.URL, params = args) as response:

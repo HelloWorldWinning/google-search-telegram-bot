@@ -224,10 +224,11 @@ class MessageHandler():
 					self.RESPONSE_MD_DISALLOWED_USER, parse_mode = "Markdown")
 		except Exception as e:
 			Log.e("class MessageHandler() message_handler.py:226  Failed while _do_handle", e)
-			self._do_handle()
-
-	#		self._bot.sendMessage(self._glance["chat_id"],
-	#				self.RESPONSE_EXCEPTION)
+			
+                        try:
+                             self._do_handle()
+                        except:
+			     self._bot.sendMessage(self._glance["chat_id"],  self.RESPONSE_EXCEPTION)
 
 	class _TextResponse():
 		def __init__(self, content, type = "Markdown"):

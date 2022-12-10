@@ -223,7 +223,7 @@ class MessageHandler():
 			self._bot.sendMessage(self._glance["chat_id"],
 					self.RESPONSE_MD_DISALLOWED_USER, parse_mode = "Markdown")
 		except Exception as e:
-			Log.e("Failed while _do_handle", e)
+			Log.e("class MessageHandler() message_handler.py:226  Failed while _do_handle", e)
 			self._do_handle()
 
 	#		self._bot.sendMessage(self._glance["chat_id"],

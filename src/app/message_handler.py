@@ -247,10 +247,13 @@ class MessageHandler():
 	def _do_handle(self):
 		Log.v(self._msg)
 		if self._glance["content_type"] == "text":
-			if self._msg["text"].startswith("/"):
-				self._handle_command(self._msg["text"])
-			else:
-				self._handle_text(self._msg["text"])
+			self._handle_text(self._msg["text"])
+
+		#	if self._msg["text"].startswith("/"):
+		#		self._handle_command(self._msg["text"])
+		#	else:
+		#		self._handle_text(self._msg["text"])
+
 		else:
 			self._bot.sendMessage(self._glance["chat_id"],
 					self.RESPONSE_NON_TEXTUAL_INPUT)

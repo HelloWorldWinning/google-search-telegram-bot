@@ -58,10 +58,11 @@ class _QueryHandler():
 		return args
 
 ## Bot logic when it's called in an inline mannar
+			# description = "Ehmm... I feel like I'm sick, mind contacting my parents about this?",
 class _InlineMessageBaseHandler():
 	RESPONSE_EXCEPTION = [InlineQueryResultArticle(id = str(uuid.uuid4()),
 			title = "Error",
-			description = "Ehmm... I feel like I'm sick, mind contacting my parents about this?",
+			description = "class _InlineMessageBaseHandler()",
 			url = "https://github.com/HelloWorldWinning/google-search-telegram-bot",
 			input_message_content = InputTextMessageContent(
 					message_text = "Sorry, no results could be provided. Mind contacting my parents about this (with a screenshot of our conversation if you don't mind) at https://github.com/HelloWorldWinning/google-search-telegram-bot ?"))]

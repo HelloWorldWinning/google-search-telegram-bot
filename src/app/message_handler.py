@@ -2,6 +2,7 @@ import telepot
 from telepot.namedtuple import InlineQueryResultArticle, InputTextMessageContent, \
 		InlineQueryResultPhoto
 import uuid
+import re
 
 from app.custom_search_api import CustomSearchApi
 from app.lazy import Lazy
@@ -337,7 +338,6 @@ class MessageHandler():
 		}
 
 def _markdown_escape(str):
-	import re
 	return re.sub(r"([*_#\[\]<>])", r"\\\1", str)
 
 def _format_msg(cse_item):

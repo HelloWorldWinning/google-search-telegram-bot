@@ -2,7 +2,5 @@
 	"telegram_bot_token": "5659346307:AAEn1bQ1FR_T7vjWwTQRg_C_aFJl3W17poU",
 	"google_api_key": "AIzaSyDTZlq6CO31ASD03ALjZUhYggXpF3itiLg",
 	"search_engine_id": "d14015de5dbec4f92",
-	"allow_only_users": [],
-	"number_of_result":5
-	
+	"allow_only_users": []
 }

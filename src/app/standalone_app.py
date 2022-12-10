@@ -2,7 +2,7 @@ import telepot
 
 from app.config_loader import ConfigLoader
 from app.log import Log
-from app.message_handler import MessageHandler, InlineMessageHandler
+from app.message_handler import MessageHandler,  InlineMessageHandler
 
 class StandaloneApp():
 	TELEGRAM_TOKEN = ConfigLoader.load("telegram_bot_token")
